@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <img src="./images/shoes.png" id="Frontimg">
+            <img src="./images/shoes2.png" id="Backimg">
+            <div class="product-inner" id="productbox" id="Backimg">
+
+                <div class="product-front">
+                    <div class="product-top">
+                        <h1>NIKE</h1>
+                    </div>
+                    <div class="product-bottom">
+                        <p>Nike running shoes</p>
+                        <h2>Air Zoom Winflo 6</h2>
+                        <h1>125<span>$</span></h1>
+                        <button type="button" onclick="">Add to Bag</button>
+                        <div class="color-select">
+                            <div class="select-item">
+                                <img src="./images/shoes-icon.png">
+                            </div>
+
+                            <div class="select-item">
+                                <img src="./images/shoes-icon2.png"  onclick="flipRight()">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-back">
+                    <div class="product-top product-top2">
+                        <h1>NIKE</h1>
+                    </div>
+                    <div class="product-bottom">
+                        <p>Nike running shoes</p>
+                        <h2>Air Zoom Winflo 6</h2>
+                        <h1>125<span>$</span></h1>
+                        <button type="button" onclick="">Add to Bag</button>
+                        <div class="color-select">
+                            <div class="select-item">
+                                <img src="./images/shoes-icon.png" onclick="flipLeft()">
+                            </div>
+
+                            <div class="select-item">
+                                <img src="./images/shoes-icon2.png">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="left-side"></div>
+                <div class="right-side"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var Productbox = document.getElementById("productbox");
+        var Frontimg = document.getElementById("Frontimg");
+        var Backimg = document.getElementById("Backimg");
+
+        function flipRight()
+        {
+            Productbox.style.transform ="rotateY(180deg)";
+            Frontimg.style.left="650px";
+            Backimg.style.left="20px";
+            Frontimg.style.transform="rotate(-30deg)";
+            Backimg.style.transform="rotate(0deg)";
+
+        }
+
+        function flipLeft()
+        {
+            Productbox.style.transform ="rotateY(0deg)";
+            Frontimg.style.left="20px";
+            Backimg.style.left="-650px";
+            Frontimg.style.transform="rotate(0deg)";
+            Backimg.style.transform="rotate(-30deg)";
+        }
+
+    </script>
+</body>
+</html>
